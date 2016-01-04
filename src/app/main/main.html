@@ -1,9 +1,8 @@
-<div class="container">
-
+<div class="container-fluid no-padding">
   <div>
     <acme-navbar creation-date="main.creationDate"></acme-navbar>
   </div>
-
+  <div class="container no-padding">
   <div class="jumbotron text-center">
     <h1>'Allo, 'Allo!</h1>
     <p class="lead">
@@ -18,17 +17,74 @@
     </p>
   </div>
 
+
   <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-      <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-        <div class="caption">
-          <h3>{{ awesomeThing.title }}</h3>
-          <p>{{ awesomeThing.description }}</p>
-          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+    <!-- add extra container element for Masonry -->
+    <div class="grid js-masonry" masonry='{ "transitionDuration" : "0.2s", "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true}'>
+      <div class="grid-sizer col-xs-1 col-sm-1 col-md-1">1</div>
+      <div class="grid-item col-xs-12 col-sm-6 col-md-4">
+        <!-- add inner element for column content -->
+        <div class="grid-item-content">2</div>
+      </div>
+      <div class="grid-item col-xs-12 col-sm-6 col-md-4">
+        <div class="grid-item-content"></div>
+      </div>
+      <div class="grid-item col-xs-12 col-sm-6 col-md-4">
+        <div class="grid-item-content grid-item-content--height2"></div>
+      </div>
+      <div class="grid-item col-xs-12 col-sm-6 col-md-4">
+        <div class="grid-item-content"></div>
+      </div>
+      <div class="grid-item col-xs-12 col-sm-6 col-md-4">
+        <div class="grid-item-content grid-item-content--height2"></div>
+      </div>
+      <div class="grid-item col-xs-12 col-sm-6 col-md-4">
+        <div class="grid-item-content"></div>
+      </div>
+      <div class="grid-item col-xs-12 col-sm-6 col-md-4">
+        <div class="grid-item-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="grid js-masonry" masonry='{ "transitionDuration" : "0.2s", "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true}'>
+      <div class="grid-sizer col-xs-1 col-sm-1 col-md-1"></div>
+      <div class="grid-item col-xs-12 col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
+        <div class="thumbnail">
+          <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
+          <div class="caption">
+            <h3>{{ awesomeThing.title }}</h3>
+            <p>{{ awesomeThing.description }}</p>
+            <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
 </div>
+</div>
+
+
+
+
+<style>
+  .grid-item-content {
+    height: 100px;
+    background: #D26;
+    border: 2px solid hsla(0, 0%, 0%, 0.5);
+    border-radius: 5px;
+  }
+
+  .grid-item-content--height2 { height: 200px; }
+  .grid-item {
+    padding:0 15px;
+    margin-bottom: 10px;
+  }
+  .no-padding {
+    padding: 0;
+    overflow-x: hidden;
+  }
+  body { }
+</style>
