@@ -20,7 +20,7 @@
                 ) {
                 delayChange(false, 200);
             } else {
-                delayChange(true, 500);
+                delayChange(true, 0);
             }
             scope.scrollPosition = this.pageYOffset;
             scope.$apply();

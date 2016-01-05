@@ -6,9 +6,11 @@
     .controller('ItemDetailController', ItemDetailController);
 
   /** @ngInject */
-  function ItemDetailController($timeout, webDevTec, toastr) {
+  function ItemDetailController($rootScope) {
+    $rootScope.pageClass = 'page-detail';
     var vm = this;
 
+    
     vm.awesomeThings = [];
     vm.classAnimation = '';
     vm.creationDate = 1451378636999;

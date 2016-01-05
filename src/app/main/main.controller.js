@@ -6,7 +6,8 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController($rootScope, $timeout, webDevTec, toastr) {
+    $rootScope.pageClass = 'page-main';
     var vm = this;
 
     vm.awesomeThings = [];
