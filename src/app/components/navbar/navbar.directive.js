@@ -23,7 +23,17 @@
     /** @ngInject */
     function NavbarController(moment) {
       var vm = this;
-
+      vm.actions = [
+        {
+          icon: 'camera'
+        },
+        {
+          icon: 'star-o'
+        },
+        {
+          icon: 'thumbs-o-up'
+        }
+      ];
       // "vm.creation" is avaible by directive option "bindToController: true"
       vm.relativeDate = moment(vm.creationDate).fromNow();
     }

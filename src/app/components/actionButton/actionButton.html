@@ -1,0 +1,42 @@
+<!--<div class="content">
+	<div class="action">-->
+		<div class="action-wrapper">
+			<ul class="action-items">
+				<li ng-repeat="action in vm.actions" ng-init="rotate=90+180/(vm.actions.length+1)*($index+1)" class="action-item" style="transform:rotate({{rotate}}deg); -webkit-transform:rotate({{rotate}}deg);">
+					<button ng-show="vm.showButton()" class="action-item-button" index="{{$index}}" style="transform:rotate(-{{rotate}}deg); -webkit-transform:rotate(-{{rotate}}deg);">
+						<i class="action-item-icon fa fa-{{action.icon}}"></i>
+					</button>
+					<div ng-show="vm.showButton()" class="action-item-bounce" index="{{$index}}"></div>
+				</li>
+				<!--<li class="action-item">
+					<button class="action-item-button">
+						<i class="action-item-icon icon icon-box"></i>
+					</button>
+					<div class="action-item-bounce"></div>
+				</li>
+				<li class="action-item">
+					<button class="action-item-button">
+						<i class="action-item-icon icon icon-trash"></i>
+					</button>
+					<div class="action-item-bounce"></div>
+				</li>-->
+			</ul>
+			<button class="action-toggle-button" ng-click="vm.toggle()" ng-class="{active: vm.showButton()}">
+				<i class="fa fa-plus action-toggle-icon" ng-class="{active: vm.showButton()}"></i>
+			</button>
+		</div>
+	<!--</div>
+	<p class="info">Based on the Dribbble shot <a href="https://dribbble.com/shots/1936758-GIF-of-the-Tap-Bar-Concept">GIF of the Tap Bar Concept</a> by Sergey Valiukh</p>
+</div>-->
+
+<!--
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="800">
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"></feColorMatrix>
+      <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+    </filter>
+  </defs>
+</svg>
+-->

@@ -1,0 +1,87 @@
+.action {
+	width: 300px;
+	height: 200px;
+	margin: 0 auto 100px;
+	position: relative;
+	-webkit-filter: url("#goo");
+	filter: url("../index.html#goo");
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+.action-wrapper {
+	position: absolute;
+	left: 50%;
+	bottom: 10px;
+}
+
+.action-toggle-button,
+.action-item-bounce,
+.action-item-button {
+	background: #333333;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	margin-left: -40px;
+	margin-top: -40px;
+	height: 80px;
+	color: #fff;
+	border: none;
+	outline: none;
+	position: relative;
+}
+
+.action-toggle-button {
+	--background: transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.action-toggle-icon {
+	font-size: 30px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+}
+
+.action-items {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.action-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+}
+
+.action-item-bounce {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.action-item-button {
+	width: 40px;
+	height: 40px;
+	margin-left: -20px;
+	margin-top: -20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #5AADBB;
+}
+
+.action-item-button:hover {
+	color: #fff;
+}

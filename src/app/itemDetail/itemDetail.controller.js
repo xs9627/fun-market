@@ -13,6 +13,5 @@
     
     vm.awesomeThings = [];
     vm.classAnimation = '';
-    vm.creationDate = 1451378636999;
   }
 })();
