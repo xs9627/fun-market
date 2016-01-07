@@ -1,5 +1,5 @@
 
-<div class="container no-padding">
+<div class="container no-padding hide-scrollbar">
   <div class="jumbotron text-center">
     <h1>'Allo, 'Allo!</h1>
     <p class="lead">
@@ -15,40 +15,38 @@
   </div>
 
 
-  <div class="row">
-    <!-- add extra container element for Masonry -->
-    <div class="grid js-masonry" masonry='{ "transitionDuration" : "0.2s", "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true}'>
-      <div class="grid-sizer col-xs-1 col-sm-1 col-md-1">1</div>
-      <div class="grid-item col-xs-12 col-sm-6 col-md-4">
-        <!-- add inner element for column content -->
+  <!--<div class="row">
+    <div class="grid" masonry='{ "transitionDuration" : "0.2s", "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true}'>
+      <div masonry-brick class="grid-sizer col-xs-2 col-sm-2 col-md-2">1</div>
+      <div masonry-brick class="grid-item col-xs-12 col-sm-6 col-md-4">
         <div class="grid-item-content">2<a ui-sref="detail">About</a></div>
       </div>
-      <div class="grid-item col-xs-12 col-sm-6 col-md-4">
+      <div masonry-brick class="grid-item col-xs-12 col-sm-6 col-md-4">
         <div class="grid-item-content"></div>
       </div>
-      <div class="grid-item col-xs-12 col-sm-6 col-md-4">
+      <div masonry-brick class="grid-item col-xs-12 col-sm-6 col-md-4">
         <div class="grid-item-content grid-item-content--height2"></div>
       </div>
-      <div class="grid-item col-xs-12 col-sm-6 col-md-4">
+      <div masonry-brick class="grid-item col-xs-12 col-sm-6 col-md-4">
         <div class="grid-item-content"></div>
       </div>
-      <div class="grid-item col-xs-12 col-sm-6 col-md-4">
+      <div masonry-brick class="grid-item col-xs-12 col-sm-6 col-md-4">
         <div class="grid-item-content grid-item-content--height2"></div>
       </div>
-      <div class="grid-item col-xs-12 col-sm-6 col-md-4">
+      <div masonry-brick class="grid-item col-xs-12 col-sm-6 col-md-4">
         <div class="grid-item-content"></div>
       </div>
-      <div class="grid-item col-xs-12 col-sm-6 col-md-4">
+      <div masonry-brick class="grid-item col-xs-12 col-sm-6 col-md-4">
         <div class="grid-item-content"></div>
       </div>
     </div>
-  </div>
+  </div>-->
 
-  <div class="row">
-    <div class="grid js-masonry" masonry='{ "transitionDuration" : "0.2s", "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true}'>
-      <div class="grid-sizer col-xs-1 col-sm-1 col-md-1"></div>
-      <div class="grid-item col-xs-12 col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-        <div class="thumbnail">
+  <div class="row" ng-cloak>
+    <div class="grid" preserve-order masonry='{ "transitionDuration" : "0", "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true, "loadImages": false}'>
+      <div masonry-brick class="grid-sizer col-xs-2 col-sm-2 col-md-2"></div>
+      <div masonry-brick class="grid-item col-xs-12 col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
+        <div class="thumbnail" ng-class="{'grid-item-content--height4': $index%4==0}">
           <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
           <div class="caption">
             <h3>{{ awesomeThing.title }}</h3>
