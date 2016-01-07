@@ -77,12 +77,12 @@
                   force3D:true,
                   ease:Quad.easeInOut,
                   onComplete:function(){
-                    TweenMax.to($bounce,3,{
+                    TweenMax.to($bounce,1.5,{
                       // scaleX:1,
                       scaleY:1,
                       force3D:true,
                       ease:Elastic.easeOut,
-                      easeParams:[1.1,0.12]
+                      easeParams:[1.1,0.3]
                     })
                   }
                 })
@@ -107,12 +107,12 @@
                   force3D:true,
                   ease:Quad.easeInOut,
                   onComplete:function(){
-                    TweenMax.to(element,3,{
+                    TweenMax.to(element,1.5,{
                       // scaleX:1,
                       scaleY:0.8,
                       force3D:true,
                       ease:Elastic.easeOut,
-                      easeParams:[1.1,0.12]
+                      easeParams:[1.1,0.3]
                     })
                   }
                 })

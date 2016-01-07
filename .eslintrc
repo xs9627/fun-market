@@ -8,6 +8,10 @@
   "globals": {
     "angular": true,
     "module": true,
-    "inject": true
+    "inject": true,
+    "TweenMax": true,
+    "Quint": true,
+    "Quad": true,
+    "Elastic": true
   }
 }

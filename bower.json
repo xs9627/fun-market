@@ -20,7 +20,8 @@
     "angular": "~1.4.2",
     "masonry": "~3.3.2",
     "gsap": "~1.18.2",
-    "font-awesome": "~4.5.0"
+    "font-awesome": "~4.5.0",
+    "angular-masonry-directive": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.2"
