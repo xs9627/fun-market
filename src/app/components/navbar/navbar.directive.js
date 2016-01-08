@@ -6,7 +6,7 @@
     .directive('acmeNavbar', acmeNavbar);
 
   /** @ngInject */
-  function acmeNavbar() {
+  function acmeNavbar($timeout) {
     var directive = {
       restrict: 'E',
       templateUrl: 'app/components/navbar/navbar.html',
@@ -36,6 +36,27 @@
       ];
       // "vm.creation" is avaible by directive option "bindToController: true"
       vm.relativeDate = moment(vm.creationDate).fromNow();
+
+      vm.scrollUp = function(pageYOffset) {
+        if(pageYOffset < 300) {
+          delayChange(false, 0);
+        } else {
+          delayChange(false, 200);
+        }
+      }
+      vm.scrollDown = function(pageYOffset){
+        delayChange(true, 200);
+      }
+
+      var timer = false;
+      function delayChange(value, delayTime){
+        if (timer) {
+            $timeout.cancel(timer);
+        }
+        timer = $timeout(function () {
+            vm.boolChangeClass = value;
+        }, delayTime);
+      }
     }
   }
 

@@ -1,6 +1,6 @@
-<nav navscroll ng-class="{min:boolChangeClass}" class="navbar navbar-fixed-bottom navbar-inverse scroll">
+<nav ng-class="{min:vm.boolChangeClass}" class="navbar navbar-fixed-bottom navbar-inverse scroll">
   <div class="navbar-action">
-    <action-button actions="vm.actions" hide-button="boolChangeClass"></action-button>
+    <action-button actions="vm.actions" hide-button="vm.boolChangeClass"></action-button>
   </div>
   <div class="container-fluid">
     <div class="navbar-header">
@@ -22,3 +22,4 @@
     </div>
   </div>
 </nav>
+<scroll-detecter on-scroll-up="vm.scrollUp" on-scroll-down="vm.scrollDown"></scroll-detecter>

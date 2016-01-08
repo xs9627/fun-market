@@ -45,7 +45,7 @@
   <div class="row" ng-cloak>
     <div class="grid" preserve-order masonry='{ "transitionDuration" : "0", "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true, "loadImages": false}'>
       <div masonry-brick class="grid-sizer col-xs-2 col-sm-2 col-md-2"></div>
-      <div masonry-brick class="grid-item col-xs-12 col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
+      <div masonry-brick class="grid-item col-xs-12 col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings track by $index">
         <div class="thumbnail" ng-class="{'grid-item-content--height4': $index%4==0}">
           <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
           <div class="caption">
@@ -58,3 +58,4 @@
     </div>
   </div>
 </div>
+<scroll-detecter on-reach-bottom="main.getWebDevTec"></scroll-detecter>

@@ -14,6 +14,7 @@
     vm.classAnimation = '';
     vm.creationDate = 1451378636999;
     vm.showToastr = showToastr;
+    vm.getWebDevTec = getWebDevTec;
 
     activate();
 
@@ -30,11 +31,13 @@
     }
 
     function getWebDevTec() {
-      vm.awesomeThings = webDevTec.getTec();
+      vm.awesomeThings = vm.awesomeThings.concat(webDevTec.getTec());
 
       angular.forEach(vm.awesomeThings, function(awesomeThing) {
         awesomeThing.rank = Math.random();
       });
     }
+
+    
   }
 })();
